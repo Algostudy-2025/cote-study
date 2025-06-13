@@ -24,7 +24,6 @@
   * [Lv1 - 완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
   * [Lv1 - K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
 * 주석으로 풀이 방식, 시간복잡도 설명 필요
-* 수요일 저녁까지 PR 제출 후 리뷰
 
 ---
 
