@@ -23,7 +23,9 @@
 
   * [Lv1 - 완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
   * [Lv1 - K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
-* 주석으로 풀이 방식, 시간복잡도 설명 필요
+  * [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644)  
+  * [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862)
+* 주석으로 풀이 방식 필수
 
 ---
 
