@@ -19,10 +19,10 @@
 ### 🔹 Week 0: 연습 주차
 
 * 프로그래머스 플랫폼 사용법 및 함수형 채점 방식에 익숙해지는 기간
-* 아래 문제 중 2문제 이상 풀이 (예시)
+* 아래 문제 중 2문제 이상 풀이
 
-  * [Lv1 - 완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
-  * [Lv1 - K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
+  * [완주하지 못한 선수](https://school.programmers.co.kr/learn/courses/30/lessons/42576)
+  * [K번째 수](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
   * [두 개 뽑아서 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/68644)  
   * [체육복](https://school.programmers.co.kr/learn/courses/30/lessons/42862)
 * 주석으로 풀이 방식 필수
