@@ -7,6 +7,7 @@
 배열에 저장하여 return
 
 시간복잡도 O(N)
+정확성 81.8(배포까지 남은 일수 계산시 오류)
 */
 
 public class P42586 {
@@ -19,7 +20,7 @@ public class P42586 {
             int left = (100 - progresses[i])/speeds[i];
             //day = 배포까지 남은 일자
             int day;
-            if(progresses[i]%speeds[i] == 0){
+            if((100 - progresses[i]) % speeds[i] == 0){
                 day = left;
             }else{
                 day = left+1;
