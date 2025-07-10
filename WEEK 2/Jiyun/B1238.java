@@ -19,7 +19,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class B1238 {
 
     static class Road {
         int from, to, time;
