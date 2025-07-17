@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.LinkedList;
 
 
-public class Main {
+public class B14466 {
 
     static class Pos {
         int x, y;
