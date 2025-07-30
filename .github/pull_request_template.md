@@ -1,6 +1,5 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 기능개발](https://school.programmers.co.kr/learn/courses/30/lessons/42586)
-- [BOJ 1234 - 문제 제목](https://www.acmicpc.net/problem/1234)
+- [프로그래머스 - 서버 증설 횟수](https://school.programmers.co.kr/learn/courses/30/lessons/389479)
 
 ## 💡 풀이 요약
 - 큐를 이용하여 배포 시점 관리
