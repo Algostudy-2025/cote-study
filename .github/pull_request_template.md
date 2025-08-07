@@ -1,5 +1,5 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 서버 증설 횟수](https://school.programmers.co.kr/learn/courses/30/lessons/389479)
+- [프로그래머스 - 합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413)
 
 ## 💡 풀이 요약
 - 큐를 이용하여 배포 시점 관리
