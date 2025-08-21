@@ -1,9 +1,10 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 정수 삼각형](https://school.programmers.co.kr/learn/courses/30/lessons/43105)
+- [프로그래머스 - n+1 카드게임](https://school.programmers.co.kr/learn/courses/30/lessons/258707)
+- [프로그래머스 - 입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
 
 ## 💡 풀이 요약
-- 큐를 이용하여 배포 시점 관리
-- 시간 복잡도: O(N)
+-  n+1 카드게임 : XXX 사용
+-  입국심사 : XXX 사용
 
 ## ❗ 어려웠던 점
 - 경계 조건에서 버그 발생 → 디버깅에 시간 소요
