@@ -19,12 +19,10 @@ class Solution {
         int idx = n / 3; // 다음 공개 카드 인덱스
         int round = 1;
 
-        while (true) {
+        while (idx < n) { // 카드 뭉치에 남은 카드가 있는 경우만 실행
             // 이번 라운드 공개 2장 -> wait에 누적 (덱 소진 시 패스)
-            if (idx < n)
-                wait.add(cards[idx++]);
-            if (idx < n)
-                wait.add(cards[idx++]);
+            wait.add(cards[idx++]); // while(true)하고 여기 if(idx<n) 붙였을때 테케 18번에서 에러남 (우선순위1을 실행하기 때문인듯...!!)
+            wait.add(cards[idx++]);
 
             // 우선순위1) hand + hand (코인 0)
             if (consumePairSameSet(hand)) {
@@ -49,6 +47,7 @@ class Solution {
             // 어떤 방법으로도 페어를 못 만들면 종료
             break;
         }
+
         return round;
     }
 
