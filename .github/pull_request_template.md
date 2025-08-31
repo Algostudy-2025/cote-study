@@ -1,10 +1,10 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - n+1 카드게임](https://school.programmers.co.kr/learn/courses/30/lessons/258707)
-- [프로그래머스 - 입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
+- [프로그래머스 - 다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583)
+- [프로그래머스 - 징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062)
 
 ## 💡 풀이 요약
--  n+1 카드게임 : XXX 사용
--  입국심사 : XXX 사용
+-  다리를 지나는 트럭 : XXX 사용
+-  징검다리 건너기 : XXX 사용
 
 ## ❗ 어려웠던 점
 - 경계 조건에서 버그 발생 → 디버깅에 시간 소요
