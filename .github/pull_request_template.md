@@ -1,10 +1,12 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 다리를 지나는 트럭](https://school.programmers.co.kr/learn/courses/30/lessons/42583)
-- [프로그래머스 - 징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062)
+- [프로그래머스 - 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)
+- [프로그래머스 - 지게차와 크레인](https://school.programmers.co.kr/learn/courses/30/lessons/388353)
+- [프로그래머스 - 입양 시각 구하기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/59413)
 
 ## 💡 풀이 요약
--  다리를 지나는 트럭 : XXX 사용
--  징검다리 건너기 : XXX 사용
+-  블록 이동하기 : XXX 사용
+-  지게차와 크레인 : XXX 사용
+-  입양 시각 구하기(2) : XXX 사용
 
 ## ❗ 어려웠던 점
 - 경계 조건에서 버그 발생 → 디버깅에 시간 소요
