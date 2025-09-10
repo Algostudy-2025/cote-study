@@ -5,6 +5,13 @@ import java.util.*;
 //수직 -> 수평 회전: 로봇의 좌 2칸 또는 우 2칸 비어있어야 함
 //방문배열은 수평/수직 여부까지 포함한 3차원 배열로 표시해야 함
 //큐에 넣을 때 (로봇1칸, 로봇2칸, 총횟수, 수평/수직) 으로 넣어야 한다.
+import java.util.*;
+
+//참고: https://stritegdc.tistory.com/283
+//수평 -> 수직 회전: 로봇의 상 2칸 또는 하 2칸 비어있어야 함
+//수직 -> 수평 회전: 로봇의 좌 2칸 또는 우 2칸 비어있어야 함
+//방문배열은 수평/수직 여부까지 포함한 3차원 배열로 표시해야 함
+//큐에 넣을 때 (로봇1칸, 로봇2칸, 총횟수, 수평/수직) 으로 넣어야 한다.
 class Solution {
     static int N;
     static int[] dr = {-1,1,0,0};
@@ -60,30 +67,48 @@ class Solution {
                 if(board[nr1][nc1]==1||board[nr2][nc2]==1) continue; //or로 연결
                 if(visited[nr1][nc1][curr.vertical]&&visited[nr2][nc2][curr.vertical]) continue; //and로 연결
                 q.add(new Robot(new Pos(nr1, nc1), new Pos(nr2, nc2), curr.t+1, curr.vertical)); //현재 로봇의 수평/수직을 따라감
+                visited[nr1][nc1][curr.vertical] = true;
+                visited[nr2][nc2][curr.vertical] = true;
             }
             
             //(2) 회전시키기
             if(curr.vertical==1){ //수직인 경우 -> 수평으로 회전
                 //왼쪽 두 칸 확인
                 if(c1-1>=0 && board[r1][c1-1]==0 && board[r2][c2-1]==0){
-                    q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2-1), curr.t+1, 0));
-                    q.add(new Robot(new Pos(r2, c1-1), new Pos(r2, c2), curr.t+1, 0));
+                    if(!(visited[r1][c1][0]&&visited[r1][c2-1][0])){
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2-1), curr.t+1, 0));
+                    }
+                    if(!(visited[r2][c1-1][0]&&visited[r2][c2][0])){
+                        q.add(new Robot(new Pos(r2, c1-1), new Pos(r2, c2), curr.t+1, 0));
+                    }
                 }
                 //오른쪽 두 칸 확인
                 if(c1+1<N && board[r1][c1+1]==0 && board[r2][c2+1]==0){
-                    q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2+1), curr.t+1, 0));
-                    q.add(new Robot(new Pos(r2, c1+1), new Pos(r2, c2), curr.t+1, 0));
+                    if(!(visited[r1][c1][0]&&visited[r1][c2+1][0])){
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2+1), curr.t+1, 0));
+                    }
+                    if(!(visited[r2][c1+1][0]&&visited[r2][c2][0])){
+                        q.add(new Robot(new Pos(r2, c1-1), new Pos(r2, c2), curr.t+1, 0));
+                    }
                 }
             }else{ //수평인 경우 -> 수직으로 이동
-                //수평인 경우, 상하 2칸 확인
-                if(r2-1>=0 && board[r2-1][c1]==0 && board[r2-1][c2]==0){
-                    q.add(new Robot(new Pos(r1-1, c2), new Pos(r2, c2), curr.t+1, 1));
-                    q.add(new Robot(new Pos(r1, c1), new Pos(r2-1, c1), curr.t+1, 1));
-                    
+                //위쪽 2칸 확인
+                if(r1-1>=0 && board[r1-1][c1]==0 && board[r2-1][c2]==0){
+                    if(!(visited[r1-1][c2][1]&&visited[r2][c2][1])){
+                        q.add(new Robot(new Pos(r1-1, c2), new Pos(r2, c2), curr.t+1, 1));
+                    }
+                    if(!(visited[r1][c1][1]&&visited[r2-1][c1][1])){
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r2-1, c1), curr.t+1, 1));
+                    }
                 }
+                //아래쪽 2칸 확인
                 if(r1+1<N && board[r1+1][c1]==0 && board[r2+1][c2]==0){
-                    q.add(new Robot(new Pos(r1+1, c2), new Pos(r1, c2), curr.t+1, 1));   
-                    q.add(new Robot(new Pos(r1, c1), new Pos(r2+1, c2), curr.t+1, 1));   
+                    if(!(visited[r1+1][c2][1]&&visited[r2][c2][1])){
+                        q.add(new Robot(new Pos(r1+1, c2), new Pos(r1, c2), curr.t+1, 1));   
+                    }
+                    if(!(visited[r1][c1][1]&&visited[r2+1][c1][1])){
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r2+1, c2), curr.t+1, 1)); 
+                    } 
                 }
                 
             }
