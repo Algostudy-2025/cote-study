@@ -5,13 +5,6 @@ import java.util.*;
 //수직 -> 수평 회전: 로봇의 좌 2칸 또는 우 2칸 비어있어야 함
 //방문배열은 수평/수직 여부까지 포함한 3차원 배열로 표시해야 함
 //큐에 넣을 때 (로봇1칸, 로봇2칸, 총횟수, 수평/수직) 으로 넣어야 한다.
-import java.util.*;
-
-//참고: https://stritegdc.tistory.com/283
-//수평 -> 수직 회전: 로봇의 상 2칸 또는 하 2칸 비어있어야 함
-//수직 -> 수평 회전: 로봇의 좌 2칸 또는 우 2칸 비어있어야 함
-//방문배열은 수평/수직 여부까지 포함한 3차원 배열로 표시해야 함
-//큐에 넣을 때 (로봇1칸, 로봇2칸, 총횟수, 수평/수직) 으로 넣어야 한다.
 class Solution {
     static int N;
     static int[] dr = {-1,1,0,0};
@@ -71,47 +64,71 @@ class Solution {
                 visited[nr2][nc2][curr.vertical] = true;
             }
             
-            //(2) 회전시키기
-            if(curr.vertical==1){ //수직인 경우 -> 수평으로 회전
-                //왼쪽 두 칸 확인
-                if(c1-1>=0 && board[r1][c1-1]==0 && board[r2][c2-1]==0){
-                    if(!(visited[r1][c1][0]&&visited[r1][c2-1][0])){
-                        q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2-1), curr.t+1, 0));
+            // (2) 회전시키기
+            if (curr.vertical == 1) { // 수직 -> 수평
+                // 왼쪽 두 칸 비어있는지 확인: c1-1, c2-1 모두 0 이상
+                if (c1 - 1 >= 0 && c2 - 1 >= 0 && board[r1][c1 - 1] == 0 && board[r2][c2 - 1] == 0) {
+                    // 위쪽 블록을 기준으로 좌측 회전: (r1, c1-1) - (r1, c1)
+                    if (!(visited[r1][c1 - 1][0] && visited[r1][c1][0])) {
+                        q.add(new Robot(new Pos(r1, c1 - 1), new Pos(r1, c1), curr.t + 1, 0));
+                        visited[r1][c1 - 1][0] = true;
+                        visited[r1][c1][0] = true;
                     }
-                    if(!(visited[r2][c1-1][0]&&visited[r2][c2][0])){
-                        q.add(new Robot(new Pos(r2, c1-1), new Pos(r2, c2), curr.t+1, 0));
-                    }
-                }
-                //오른쪽 두 칸 확인
-                if(c1+1<N && board[r1][c1+1]==0 && board[r2][c2+1]==0){
-                    if(!(visited[r1][c1][0]&&visited[r1][c2+1][0])){
-                        q.add(new Robot(new Pos(r1, c1), new Pos(r1, c2+1), curr.t+1, 0));
-                    }
-                    if(!(visited[r2][c1+1][0]&&visited[r2][c2][0])){
-                        q.add(new Robot(new Pos(r2, c1-1), new Pos(r2, c2), curr.t+1, 0));
+                    // 아래쪽 블록을 기준으로 좌측 회전: (r2, c2-1) - (r2, c2)
+                    if (!(visited[r2][c2 - 1][0] && visited[r2][c2][0])) {
+                        q.add(new Robot(new Pos(r2, c2 - 1), new Pos(r2, c2), curr.t + 1, 0));
+                        visited[r2][c2 - 1][0] = true;
+                        visited[r2][c2][0] = true;
                     }
                 }
-            }else{ //수평인 경우 -> 수직으로 이동
-                //위쪽 2칸 확인
-                if(r1-1>=0 && board[r1-1][c1]==0 && board[r2-1][c2]==0){
-                    if(!(visited[r1-1][c2][1]&&visited[r2][c2][1])){
-                        q.add(new Robot(new Pos(r1-1, c2), new Pos(r2, c2), curr.t+1, 1));
+                // 오른쪽 두 칸 비어있는지 확인: c1+1, c2+1 모두 N 미만
+                if (c1 + 1 < N && c2 + 1 < N && board[r1][c1 + 1] == 0 && board[r2][c2 + 1] == 0) {
+                    // 위쪽 블록을 기준으로 우측 회전: (r1, c1) - (r1, c1+1)
+                    if (!(visited[r1][c1][0] && visited[r1][c1 + 1][0])) {
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r1, c1 + 1), curr.t + 1, 0));
+                        visited[r1][c1][0] = true;
+                        visited[r1][c1 + 1][0] = true;
                     }
-                    if(!(visited[r1][c1][1]&&visited[r2-1][c1][1])){
-                        q.add(new Robot(new Pos(r1, c1), new Pos(r2-1, c1), curr.t+1, 1));
+                    // 아래쪽 블록을 기준으로 우측 회전: (r2, c2) - (r2, c2+1)
+                    if (!(visited[r2][c2][0] && visited[r2][c2 + 1][0])) {
+                        q.add(new Robot(new Pos(r2, c2), new Pos(r2, c2 + 1), curr.t + 1, 0));
+                        visited[r2][c2][0] = true;
+                        visited[r2][c2 + 1][0] = true;
                     }
                 }
-                //아래쪽 2칸 확인
-                if(r1+1<N && board[r1+1][c1]==0 && board[r2+1][c2]==0){
-                    if(!(visited[r1+1][c2][1]&&visited[r2][c2][1])){
-                        q.add(new Robot(new Pos(r1+1, c2), new Pos(r1, c2), curr.t+1, 1));   
+            } else { // 수평 -> 수직
+                // 위쪽 두 칸 비어있는지 확인: r1-1, r2-1 모두 0 이상
+                if (r1 - 1 >= 0 && r2 - 1 >= 0 && board[r1 - 1][c1] == 0 && board[r2 - 1][c2] == 0) {
+                    // 왼쪽 블록 기준 위로 회전: (r1-1, c1) - (r1, c1)
+                    if (!(visited[r1 - 1][c1][1] && visited[r1][c1][1])) {
+                        q.add(new Robot(new Pos(r1 - 1, c1), new Pos(r1, c1), curr.t + 1, 1));
+                        visited[r1 - 1][c1][1] = true;
+                        visited[r1][c1][1] = true;
                     }
-                    if(!(visited[r1][c1][1]&&visited[r2+1][c1][1])){
-                        q.add(new Robot(new Pos(r1, c1), new Pos(r2+1, c2), curr.t+1, 1)); 
-                    } 
+                    // 오른쪽 블록 기준 위로 회전: (r2-1, c2) - (r2, c2)
+                    if (!(visited[r2 - 1][c2][1] && visited[r2][c2][1])) {
+                        q.add(new Robot(new Pos(r2 - 1, c2), new Pos(r2, c2), curr.t + 1, 1));
+                        visited[r2 - 1][c2][1] = true;
+                        visited[r2][c2][1] = true;
+                    }
                 }
-                
+                // 아래쪽 두 칸 비어있는지 확인: r1+1, r2+1 모두 N 미만
+                if (r1 + 1 < N && r2 + 1 < N && board[r1 + 1][c1] == 0 && board[r2 + 1][c2] == 0) {
+                    // 왼쪽 블록 기준 아래로 회전: (r1, c1) - (r1+1, c1)
+                    if (!(visited[r1][c1][1] && visited[r1 + 1][c1][1])) {
+                        q.add(new Robot(new Pos(r1, c1), new Pos(r1 + 1, c1), curr.t + 1, 1));
+                        visited[r1][c1][1] = true;
+                        visited[r1 + 1][c1][1] = true;
+                    }
+                    // 오른쪽 블록 기준 아래로 회전: (r2, c2) - (r2+1, c2)
+                    if (!(visited[r2][c2][1] && visited[r2 + 1][c2][1])) {
+                        q.add(new Robot(new Pos(r2, c2), new Pos(r2 + 1, c2), curr.t + 1, 1));
+                        visited[r2][c2][1] = true;
+                        visited[r2 + 1][c2][1] = true;
+                    }
+                }
             }
+
         }
         
         
