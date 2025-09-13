@@ -1,12 +1,12 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)
-- [프로그래머스 - 지게차와 크레인](https://school.programmers.co.kr/learn/courses/30/lessons/388353)
-- [프로그래머스 - 입양 시각 구하기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/59413)
+- [프로그래머스 - 충돌위험 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/340211)
+- [프로그래머스 - 전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577)
+- [프로그래머스 - 주문량이 많은 아이스크림들 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/133027)
 
 ## 💡 풀이 요약
--  블록 이동하기 : XXX 사용
--  지게차와 크레인 : XXX 사용
--  입양 시각 구하기(2) : XXX 사용
+-  충돌위험 찾기 : XXX 사용
+-  전화번호 목록 : XXX 사용
+-  주문량이 많은 아이스크림들 조회하기 : XXX 사용
 
 ## ❗ 어려웠던 점
 - 경계 조건에서 버그 발생 → 디버깅에 시간 소요
