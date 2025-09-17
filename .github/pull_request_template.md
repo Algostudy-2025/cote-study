@@ -1,12 +1,12 @@
 ## ✏️ 푼 문제
-- [프로그래머스 - 충돌위험 찾기](https://school.programmers.co.kr/learn/courses/30/lessons/340211)
-- [프로그래머스 - 전화번호 목록](https://school.programmers.co.kr/learn/courses/30/lessons/42577)
-- [프로그래머스 - 주문량이 많은 아이스크림들 조회하기](https://school.programmers.co.kr/learn/courses/30/lessons/133027)
+- [프로그래머스 - 두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+- [프로그래머스 - 요격 시스템](https://school.programmers.co.kr/learn/courses/30/lessons/181188)
+- [프로그래머스 - 연도별 대장균 크기의 편차 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/299310)
 
 ## 💡 풀이 요약
--  충돌위험 찾기 : XXX 사용
--  전화번호 목록 : XXX 사용
--  주문량이 많은 아이스크림들 조회하기 : XXX 사용
+-  두 큐 합 같게 만들기 : XXX 사용
+-  요격 시스템 : XXX 사용
+-  연도별 대장균 크기의 편차 구하기 : XXX 사용
 
 ## ❗ 어려웠던 점
 - 경계 조건에서 버그 발생 → 디버깅에 시간 소요
